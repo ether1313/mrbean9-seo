@@ -44,12 +44,12 @@ const helpLinks = [
 export default function ResponsibleGambling() {
   return (
     <section id="responsible" className="bg-[#3a2d24] border border-[#5c4a3d] rounded-xl overflow-hidden">
-      <div className="flex items-center gap-2 border-b border-[#5c4a3d] bg-[#2f241d] px-3 py-3 sm:px-5 sm:py-4">
+      <div className="flex flex-wrap items-center gap-2 border-b border-[#5c4a3d] bg-[#2f241d] px-3 py-3 sm:flex-nowrap sm:px-5 sm:py-4">
         <div className="flex h-8 w-8 items-center justify-center text-white">
           <i className="ri-shield-star-line text-xl text-white" />
         </div>
-        <h2 className="text-sm font-black uppercase tracking-wider text-white md:text-base">Responsible Gambling &amp; Licenses</h2>
-        <span className="ml-auto rounded-full border border-brand/30 bg-brand/20 px-2 py-0.5 text-[10px] font-black text-white sm:px-2.5 sm:text-xs">
+        <h2 className="min-w-0 flex-1 text-sm font-black uppercase tracking-wider text-white md:text-base">Responsible Gambling &amp; Licenses</h2>
+        <span className="ml-auto inline-flex shrink-0 items-center rounded-full border border-brand/35 bg-brand/20 px-2 py-1 text-[9px] font-black leading-none text-white sm:px-2.5 sm:py-0.5 sm:text-xs">
           18+ ONLY
         </span>
       </div>
@@ -67,8 +67,8 @@ export default function ResponsibleGambling() {
             <div className="mt-0.5 text-xs font-bold text-amber-100 sm:text-sm">Licensed · Regulated · Safe · 18+ Only</div>
           </div>
         </div>
-        <div className="absolute top-3 right-3">
-          <span className="bg-[#2f241d] border border-white/80 text-white font-black text-xs px-3 py-1 rounded-full shadow-sm">
+        <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3">
+          <span className="inline-flex items-center rounded-full border border-white/80 bg-[#2f241d] px-2.5 py-0.5 text-[10px] font-black leading-none text-white shadow-sm sm:px-3 sm:py-1 sm:text-xs">
             18+
           </span>
         </div>

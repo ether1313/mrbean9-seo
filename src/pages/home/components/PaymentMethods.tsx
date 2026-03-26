@@ -92,15 +92,18 @@ export default function PaymentMethods({ onRegisterClick }: { onRegisterClick: (
               {cat.methods.map((method) => (
                 <div
                   key={method.name}
-                  className="bg-[#2f241d] border border-[#5c4a3d] rounded-xl p-2.5 flex items-center gap-2 hover:border-[#8b6b58] transition-all"
+                  className="bg-[#2f241d] border border-[#5c4a3d] rounded-xl p-2.5 flex items-start gap-2 hover:border-[#8b6b58] transition-all"
                 >
-                  <div className="w-7 h-7 flex items-center justify-center bg-[#2f241d] rounded-lg flex-shrink-0">
+                  <div className="w-7 h-7 flex items-center justify-center bg-[#2f241d] rounded-lg flex-shrink-0 mt-0.5">
                     <i className={`${method.icon} ${cat.color} text-sm`} />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <div className="truncate text-[10px] font-bold text-white sm:text-xs md:text-sm">{method.name}</div>
-                    <div className="text-[9px] text-white sm:text-[10px] md:text-xs">
-                      {method.min} – {method.max} · <span className="text-[#22c55e]">{method.time}</span>
+                    <div className="mt-0.5 text-[9px] leading-snug text-white/90 sm:text-[10px] md:text-xs">
+                      {method.min} – {method.max}
+                    </div>
+                    <div className="mt-1 inline-flex rounded-full border border-[#22c55e]/35 bg-[#22c55e]/10 px-1.5 py-0.5 text-[9px] font-black leading-none text-[#22c55e] sm:text-[10px]">
+                      {method.time}
                     </div>
                   </div>
                 </div>

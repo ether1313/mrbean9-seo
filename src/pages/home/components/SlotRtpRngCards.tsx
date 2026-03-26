@@ -11,23 +11,23 @@ const rtpTiers = [
 const volatilityLevels = [
   {
     label: "Low",
-    desc: "Frequent small wins — longer sessions on same budget.",
+    desc: "Frequent small wins, longer sessions on same budget.",
     dots: 1,
-    accent: "text-emerald-400",
+    accent: "text-white",
     border: "border-emerald-500/40",
   },
   {
     label: "Medium",
-    desc: "Balanced hit rate — mix of dry spells and mid pays.",
+    desc: "Balanced hit rate, mix of dry spells and mid pays.",
     dots: 2,
-    accent: "text-amber-400",
+    accent: "text-white",
     border: "border-amber-500/40",
   },
   {
     label: "High",
-    desc: "Bigger peak wins — longer gaps between hits.",
+    desc: "Bigger peak wins, longer gaps between hits.",
     dots: 3,
-    accent: "text-red-400",
+    accent: "text-white",
     border: "border-red-500/40",
   },
 ];
@@ -51,11 +51,9 @@ const rngFacts = [
 
 function SectionHeader({ icon, title }: { icon: React.ReactNode; title: string }) {
   return (
-    <div className="flex items-center gap-2 border-b border-[#5c4a3d] bg-[#1f1812] px-3 py-2.5">
-      <span className="text-amber-400">{icon}</span>
-      <h3 className="text-[11px] font-black uppercase tracking-wider text-white lg:text-xs xl:text-sm">
-        {title}
-      </h3>
+    <div className="flex items-center gap-2 border-b border-[#5c4a3d] bg-[#1f1812] px-3 py-2.5 lg:gap-2.5 lg:px-3.5 lg:py-3">
+      <span className="text-amber-400 [&_svg]:h-[14px] [&_svg]:w-[14px] xl:[&_svg]:h-4 xl:[&_svg]:w-4">{icon}</span>
+      <h3 className="text-sm font-black uppercase tracking-wider text-white xl:text-base 2xl:text-lg">{title}</h3>
     </div>
   );
 }
@@ -64,11 +62,11 @@ function SectionHeader({ icon, title }: { icon: React.ReactNode; title: string }
 export function SlotStrategyCard() {
   return (
     <article className="overflow-hidden rounded-xl border border-[#5c4a3d] bg-[#2f241d]">
-      <SectionHeader icon={<TrendingUp size={13} />} title="Slot Strategy, RTP & Volatility" />
+      <SectionHeader icon={<TrendingUp size={14} />} title="Slot Strategy, RTP & Volatility" />
 
-      <div className="space-y-3.5 p-3">
+      <div className="space-y-3.5 p-3 lg:p-3.5 lg:space-y-4">
         {/* RTP explanation */}
-        <p className="text-[10px] leading-relaxed text-white/80 lg:text-xs">
+        <p className="text-sm leading-relaxed text-white/85 xl:text-base">
           RTP (return to player) is a theoretical long-run average over millions of spins — not a
           session guarantee. Aim for games listing higher RTP where available.
         </p>
@@ -76,25 +74,21 @@ export function SlotStrategyCard() {
         {/* RTP bars */}
         <div className="space-y-1.5">
           <div className="flex items-center gap-1.5">
-            <BarChart2 size={11} className="text-amber-400 shrink-0" />
-            <span className="text-[9px] font-black uppercase tracking-widest text-white/60 lg:text-[10px]">
+            <BarChart2 className="h-3.5 w-3.5 shrink-0 text-amber-400 xl:h-4 xl:w-4" />
+            <span className="text-xs font-black uppercase tracking-widest text-white/65 xl:text-sm">
               RTP Range Guide
             </span>
           </div>
           {rtpTiers.map((tier) => (
             <div key={tier.label} className="flex items-center gap-2">
-              <span className="w-10 shrink-0 text-[9px] font-bold text-white/70 lg:text-[10px]">
-                {tier.label}
-              </span>
-              <div className="relative flex-1 h-3 rounded-full bg-white/10 overflow-hidden">
+              <span className="w-11 shrink-0 text-xs font-bold text-white/75 xl:text-sm">{tier.label}</span>
+              <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-white/10 xl:h-3.5">
                 <div
                   className={`absolute inset-y-0 left-0 rounded-full ${tier.color}`}
                   style={{ width: `${tier.pct}%` }}
                 />
               </div>
-              <span className="w-16 shrink-0 text-right text-[9px] text-white/60 lg:text-[10px]">
-                {tier.range}
-              </span>
+              <span className="w-[4.25rem] shrink-0 text-right text-xs text-white/65 xl:text-sm">{tier.range}</span>
             </div>
           ))}
         </div>
@@ -102,30 +96,29 @@ export function SlotStrategyCard() {
         {/* Divider */}
         <div className="border-t border-[#5c4a3d]" />
 
-        {/* Volatility */}
-        <div className="space-y-1.5">
-          <span className="text-[9px] font-black uppercase tracking-widest text-white/60 lg:text-[10px]">
+        {/* Volatility: row1 = dots | label, row2 = description (aligned under label) */}
+        <div className="space-y-2">
+          <span className="text-xs font-black uppercase tracking-widest text-white/65 xl:text-sm">
             Volatility (Variance)
           </span>
-          <div className="flex gap-1.5">
+          <div className="flex flex-col gap-2">
             {volatilityLevels.map((v) => (
               <div
                 key={v.label}
-                className={`flex-1 rounded-lg border ${v.border} bg-white/5 p-2`}
+                className={`grid grid-cols-[auto_minmax(0,1fr)] gap-x-2 gap-y-1 rounded-lg border ${v.border} bg-white/5 px-2.5 py-2 lg:gap-x-2.5 lg:px-3 lg:py-2.5 xl:gap-x-3`}
               >
-                {/* dot indicators */}
-                <div className="flex gap-0.5 mb-1.5">
+                <div className="flex items-center gap-0.5 self-center" aria-hidden="true">
                   {[1, 2, 3].map((n) => (
                     <div
                       key={n}
-                      className={`h-1.5 w-1.5 rounded-full ${
+                      className={`h-2 w-2 rounded-full ${
                         n <= v.dots ? v.accent.replace("text-", "bg-") : "bg-white/20"
                       }`}
                     />
                   ))}
                 </div>
-                <p className={`text-[9px] font-black ${v.accent} lg:text-[10px]`}>{v.label}</p>
-                <p className="mt-0.5 text-[9px] leading-snug text-white/60">{v.desc}</p>
+                <p className={`self-center text-xs font-black xl:text-sm ${v.accent}`}>{v.label}</p>
+                <p className="col-start-2 min-w-0 text-xs leading-snug text-white/70 xl:text-sm">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -137,18 +130,18 @@ export function SlotStrategyCard() {
         {/* Strategy tips */}
         <div className="space-y-1.5">
           <div className="flex items-center gap-1.5">
-            <Lightbulb size={11} className="text-amber-400 shrink-0" />
-            <span className="text-[9px] font-black uppercase tracking-widest text-white/60 lg:text-[10px]">
+            <Lightbulb className="h-3.5 w-3.5 shrink-0 text-amber-400 xl:h-4 xl:w-4" />
+            <span className="text-xs font-black uppercase tracking-widest text-white/65 xl:text-sm">
               Practical Tips
             </span>
           </div>
-          <ol className="space-y-1.5">
+          <ol className="space-y-2">
             {strategyTips.map((tip, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-[9px] font-black text-amber-400">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-[10px] font-black text-amber-400 xl:h-6 xl:w-6 xl:text-xs">
                   {i + 1}
                 </span>
-                <p className="text-[9px] leading-relaxed text-white/80 lg:text-[10px]">{tip}</p>
+                <p className="text-xs leading-relaxed text-white/85 xl:text-sm">{tip}</p>
               </li>
             ))}
           </ol>
@@ -162,47 +155,47 @@ export function SlotStrategyCard() {
 export function RngExplainerCard() {
   return (
     <article className="overflow-hidden rounded-xl border border-[#5c4a3d] bg-[#2f241d]">
-      <SectionHeader icon={<RefreshCw size={13} />} title="RNG & Independent Spins" />
+      <SectionHeader icon={<RefreshCw size={14} />} title="RNG & Independent Spins" />
 
-      <div className="space-y-3 p-3">
+      <div className="space-y-3 p-3 lg:p-3.5 lg:space-y-4">
         {/* Visual callout */}
-        <div className="flex items-center gap-3 rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-2.5">
-          <RefreshCw size={22} className="shrink-0 text-amber-400 opacity-80" />
+        <div className="flex items-center gap-3 rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-2.5 lg:px-3.5">
+          <RefreshCw className="h-6 w-6 shrink-0 text-amber-400 opacity-80 xl:h-7 xl:w-7" />
           <div>
-            <p className="text-[10px] font-black text-amber-300 lg:text-xs">Each spin is independent.</p>
-            <p className="text-[9px] text-white/60 leading-snug lg:text-[10px]">
+            <p className="text-sm font-black text-amber-300 xl:text-base">Each spin is independent.</p>
+            <p className="text-xs leading-snug text-white/65 xl:text-sm">
               Past results have zero effect on the next outcome.
             </p>
           </div>
         </div>
 
         {/* Spin diagram: 3 boxes */}
-        <div className="flex items-center gap-1 justify-center">
+        <div className="flex items-center justify-center gap-1 xl:gap-2">
           {["Spin 1", "Spin 2", "Spin 3"].map((label, i) => (
             <div key={i} className="flex flex-col items-center gap-1">
-              <div className="flex h-8 w-14 items-center justify-center rounded-md border border-[#5c4a3d] bg-[#1f1812] text-[9px] font-black text-white/70">
+              <div className="flex h-9 w-[3.75rem] items-center justify-center rounded-md border border-[#5c4a3d] bg-[#1f1812] text-xs font-black text-white/75 xl:h-10 xl:w-16 xl:text-sm">
                 {label}
               </div>
               {i < 2 && (
                 <div className="hidden sm:flex flex-col items-center" aria-hidden="true">
-                  <span className="text-[8px] text-white/30 mt-[-2px]">≠</span>
+                  <span className="mt-[-2px] text-[10px] text-white/30 xl:text-xs">≠</span>
                 </div>
               )}
             </div>
           ))}
         </div>
-        <p className="text-center text-[9px] text-white/40 leading-snug lg:text-[10px]">
+        <p className="text-center text-xs leading-snug text-white/50 xl:text-sm">
           Each spin draws a fresh random result — no connection between rounds.
         </p>
 
         <div className="border-t border-[#5c4a3d]" />
 
         {/* Facts */}
-        <ul className="space-y-2">
+        <ul className="space-y-2.5">
           {rngFacts.map((fact, i) => (
             <li key={i} className="flex items-start gap-2">
-              <CheckCircle2 size={12} className="mt-0.5 shrink-0 text-emerald-400" />
-              <p className="text-[9px] leading-relaxed text-white/80 lg:text-[10px]">{fact}</p>
+              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-400 xl:h-4 xl:w-4" />
+              <p className="text-xs leading-relaxed text-white/85 xl:text-sm">{fact}</p>
             </li>
           ))}
         </ul>

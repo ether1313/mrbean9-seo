@@ -52,10 +52,8 @@ const steps = [
 ];
 
 const verifyItems = [
-  { icon: "ri-mail-check-line", title: "Email Verification", desc: "Confirm your email to unlock full account access and withdrawal privileges." },
   { icon: "ri-smartphone-line", title: "Mobile OTP", desc: "Enter the 6-digit OTP sent to your phone for instant identity confirmation." },
-  { icon: "ri-user-follow-line", title: "KYC Documents", desc: "Upload a government ID + proof of address for accounts withdrawing over AUD 5,000." },
-  { icon: "ri-lock-password-line", title: "2FA Security", desc: "Enable two-factor authentication via Google Authenticator for maximum account protection." },
+  { icon: "ri-user-follow-line", title: "KYC Proof", desc: "Upload a government ID + proof of address for accounts withdrawing over AUD 5,000." },
 ];
 
 export default function RegistrationSteps({ onRegisterClick }: { onRegisterClick: () => void }) {

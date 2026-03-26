@@ -30,19 +30,19 @@ export default function LeftSidebar({ onRegisterClick }: LeftSidebarProps) {
             key={article.id}
             className="overflow-hidden rounded-xl border border-[#5c4a3d] bg-[#2f241d]"
           >
-            <header className="border-b border-[#5c4a3d] bg-[#1f1812] px-3 py-2.5">
+            <header className="border-b border-[#5c4a3d] bg-[#1f1812] px-3 py-2.5 lg:px-3.5 lg:py-3">
               <h3
                 id={`left-seo-${article.id}`}
-                className="text-[11px] font-black uppercase tracking-wider text-white lg:text-xs xl:text-sm"
+                className="text-sm font-black uppercase tracking-wider text-white xl:text-base 2xl:text-lg"
               >
                 {article.heading}
               </h3>
             </header>
-            <div className="space-y-2 p-3">
+            <div className="space-y-2.5 p-3 lg:p-3.5 lg:space-y-3">
               {article.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-[10px] leading-relaxed text-white/90 lg:text-xs"
+                  className="text-sm leading-relaxed text-white/90 xl:text-base"
                 >
                   {renderWithMrBean9(paragraph)}
                 </p>

@@ -3,8 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  /* ── Root responsive font-size ──────────────────────────────────────────────
+     All Tailwind rem-based sizes (text-xs/sm/base/lg/xl …) scale with this.
+     Fixed pixel values (text-[9px] etc.) are unaffected intentionally.
+     ─────────────────────────────────────────────────────────────────────────── */
   html {
     background-color: #2a2119;
+    font-size: 15px;           /* mobile   < 640px  — comfortable, not too small */
+  }
+  @media (min-width: 640px) {
+    html { font-size: 15.5px; } /* tablet  640–1023px — slightly larger */
+  }
+  @media (min-width: 1024px) {
+    html { font-size: 16.5px; } /* desktop 1024–1279px — clear, easy to read   */
+  }
+  @media (min-width: 1280px) {
+    html { font-size: 17px; }   /* large desktop ≥ 1280px — spacious & sharp   */
+  }
+  @media (min-width: 1536px) {
+    html { font-size: 18px; }   /* 2K / wide monitor — maximum comfort          */
+  }
+
+  body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
 

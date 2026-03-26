@@ -83,15 +83,17 @@ export default function WhyChooseSection({ onRegisterClick }: { onRegisterClick:
 
   return (
     <section ref={ref} id="why-choose" className="scroll-mt-20 bg-[#3a2d24] border border-[#5c4a3d] rounded-xl overflow-hidden">
-      <div className="flex items-center gap-2 border-b border-[#5c4a3d] bg-[#2f241d] px-3 py-3 sm:px-5 sm:py-4">
+      <div className="flex flex-wrap items-center gap-2 border-b border-[#5c4a3d] bg-[#2f241d] px-3 py-3 sm:flex-nowrap sm:px-5 sm:py-4">
         <div className="flex h-8 w-8 items-center justify-center text-white">
           <i className="ri-star-smile-line text-xl text-white" />
         </div>
-        <h2 className="text-sm font-black uppercase tracking-wider text-white md:text-base">
+        <h2 className="min-w-0 flex-1 text-sm font-black uppercase tracking-wider text-white md:text-base">
           Why Choose <span className={mrBean9MarkClassName}>MrBean9</span>
         </h2>
-        <span className="ml-auto rounded-full border border-[#22c55e]/30 bg-[#22c55e]/20 px-2 py-0.5 text-[10px] font-black text-[#22c55e] sm:px-2.5 sm:text-xs">
-          TRUSTED PLATFORM
+        <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full border border-[#22c55e]/35 bg-[#22c55e]/20 px-2 py-1 text-[9px] font-black leading-none text-[#22c55e] sm:px-2.5 sm:py-0.5 sm:text-xs">
+          <i className="ri-verified-badge-line text-[10px] sm:text-xs" />
+          <span className="sm:hidden">TRUSTED</span>
+          <span className="hidden sm:inline">TRUSTED PLATFORM</span>
         </span>
       </div>
 

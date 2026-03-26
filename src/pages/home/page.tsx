@@ -40,7 +40,7 @@ export default function HomePage() {
   return (
     <main
       id="home"
-      className="min-h-screen bg-brand-bg wood-bg font-nunito text-sm text-white md:text-base antialiased"
+      className="min-h-screen bg-brand-bg wood-bg font-nunito text-base text-white"
     >
       {/* Top Bar */}
       <TopBar

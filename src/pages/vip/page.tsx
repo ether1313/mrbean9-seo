@@ -22,15 +22,15 @@ export default function VipPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-brand-bg wood-bg font-nunito text-sm text-white antialiased md:text-base">
+    <main className="min-h-screen bg-brand-bg wood-bg font-nunito text-base text-white">
       <TopBar
         onLoginClick={() => setShowModal(true)}
         onRegisterClick={() => setShowModal(true)}
       />
 
-      <div className="mx-auto max-w-6xl px-3 py-4 pb-24 md:px-6 md:py-6 md:pb-8 lg:pb-10">
+      <div className="mx-auto max-w-7xl px-3 py-4 pb-24 md:px-6 md:py-6 md:pb-8 lg:pb-10">
         <nav
-          className="mb-4 text-[11px] text-white/70 md:text-xs"
+          className="mb-4 text-xs text-white/70 md:text-sm"
           aria-label="Breadcrumb"
         >
           <Link to="/" className="font-semibold text-amber-200/90 hover:text-amber-100">
@@ -43,10 +43,10 @@ export default function VipPage() {
         <div className="flex flex-col gap-6 lg:flex-row lg:gap-8">
           <aside className="lg:w-56 lg:flex-shrink-0">
             <div className="rounded-xl border border-[#5c4a3d] bg-[#2f241d] p-3 lg:sticky lg:top-24">
-              <p className="text-[10px] font-black uppercase tracking-widest text-white/55 md:text-xs">
+              <p className="text-xs font-black uppercase tracking-widest text-white/55 md:text-sm">
                 On this page
               </p>
-              <ol className="mt-2 space-y-1.5 text-[11px] leading-snug text-white/85 md:text-xs">
+              <ol className="mt-2 space-y-1.5 text-xs leading-snug text-white/85 md:text-sm lg:text-base">
                 {vipSections.map((s, i) => (
                   <li key={s.id}>
                     <a
@@ -63,16 +63,16 @@ export default function VipPage() {
 
           <article className="min-w-0 flex-1 rounded-xl border border-[#5c4a3d] bg-[#3a2d24] px-4 py-5 shadow-sm sm:px-6 sm:py-7 md:px-8 md:py-9">
             <header className="border-b border-[#5c4a3d] pb-5">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-300/90 md:text-xs">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300/90 md:text-sm">
                 {vipPageMeta.kicker}
               </p>
-              <h1 className="mt-2 font-fredoka text-2xl font-black leading-tight text-white sm:text-3xl md:text-4xl">
+              <h1 className="mt-2 text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl">
                 {vipPageMeta.title}
               </h1>
-              <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
+              <p className="mt-4 text-base leading-relaxed text-white/85 md:text-lg lg:text-xl">
                 {vipPageMeta.subtitle}
               </p>
-              <p className="mt-3 text-[11px] text-white/50 md:text-xs">
+              <p className="mt-3 text-xs text-white/50 md:text-sm">
                 {vipPageMeta.updatedLabel}
               </p>
             </header>
@@ -84,16 +84,16 @@ export default function VipPage() {
                   id={section.id}
                   className="scroll-mt-24 border-b border-[#5c4a3d]/80 pb-10 last:border-b-0 last:pb-0"
                 >
-                  <h2 className="text-lg font-black text-white sm:text-xl md:text-2xl">
+                  <h2 className="text-xl font-black text-white sm:text-2xl md:text-3xl">
                     {section.title}
                   </h2>
-                  <div className="mt-3 space-y-3 text-sm leading-relaxed text-white/88 md:text-base">
+                  <div className="mt-4 space-y-4 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg">
                     {section.paragraphs.map((p, idx) => (
                       <p key={idx}>{renderWithMrBean9(p)}</p>
                     ))}
                   </div>
                   {section.bullets && section.bullets.length > 0 && (
-                    <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-white/85 md:text-base">
+                    <ul className="mt-4 list-inside list-disc space-y-2.5 text-sm text-white/85 md:text-base lg:text-lg">
                       {section.bullets.map((b, idx) => (
                         <li key={idx} className="leading-relaxed">
                           {renderWithMrBean9(b)}
@@ -105,20 +105,20 @@ export default function VipPage() {
               ))}
             </div>
 
-            <footer className="mt-10 rounded-lg border border-[#5c4a3d] bg-[#2f241d] p-4 text-center md:p-5">
-              <p className="text-xs text-white/80 md:text-sm">
+            <footer className="mt-10 rounded-lg border border-[#5c4a3d] bg-[#2f241d] p-4 text-center md:p-6">
+              <p className="text-sm text-white/80 md:text-base">
                 See promotions and games on the main site.
               </p>
-              <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
                 <Link
                   to="/"
-                  className="inline-flex items-center justify-center gap-1 rounded-full bg-brand px-5 py-2.5 text-xs font-black text-white hover:bg-brand-dark md:text-sm"
+                  className="inline-flex items-center justify-center gap-1 rounded-full bg-brand px-5 py-2.5 text-sm font-black text-white hover:bg-brand-dark md:text-base"
                 >
                   Back to <MrBean9Word /> home
                 </Link>
                 <Link
                   to="/guides/strategy"
-                  className="inline-flex items-center justify-center rounded-full border border-[#5c4a3d] bg-[#3a2d24] px-5 py-2.5 text-xs font-black text-white hover:border-amber-500/40 md:text-sm"
+                  className="inline-flex items-center justify-center rounded-full border border-[#5c4a3d] bg-[#3a2d24] px-5 py-2.5 text-sm font-black text-white hover:border-amber-500/40 md:text-base"
                 >
                   Strategy guide
                 </Link>
