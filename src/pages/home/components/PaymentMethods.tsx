@@ -43,20 +43,20 @@ export default function PaymentMethods({ onRegisterClick }: { onRegisterClick: (
         <div className="flex h-8 w-8 items-center justify-center text-white">
           <i className="ri-secure-payment-line text-xl text-white" />
         </div>
-        <h2 className="text-sm font-black uppercase tracking-wider text-white md:text-base">Payment Methods for Australian Players</h2>
+        <h2 className="ux-title-md uppercase tracking-wider text-white">Payment Methods for Australian Players</h2>
       </div>
 
       {/* Payment Banner */}
       <div className="relative">
         <img
-          src="https://readdy.ai/api/search-image?query=cartoon%20mr%20bean%20character%20holding%20multiple%20payment%20cards%20cryptocurrency%20coins%20bitcoin%20bank%20transfer%20wallet%20digital%20payment%20methods%20for%20Australian%20casino%20players%20vibrant%20warm%20brown%20gold%20tones%20wide%20banner%20secure%20payment%20illustration%20cheerful%20festive%20background%20with%20vault%20lock%20shield&width=900&height=160&seq=payment-banner-mrbean9&orientation=landscape"
+          src="/images/payment/aus-secure-payment.png"
           alt="Payment Methods"
-          className="w-full h-32 object-cover object-top"
+          className="w-full h-36 sm:h-60 md:h-60 object-fill object-top"
         />
         <div className="absolute inset-0 flex items-center bg-gradient-to-r from-brand/88 via-brand/42 to-transparent px-4 sm:px-6">
           <div>
-            <div className="text-base font-black leading-tight text-white sm:text-lg md:text-xl">Fast, Safe &amp; Secure Payments</div>
-            <div className="mt-0.5 text-xs font-bold text-white sm:text-sm">AUD 5 Min Deposit · AUD 25 Min Withdraw · 0% Fees</div>
+            <div className="ux-title-md text-white">Fast, Safe &amp; Secure</div>
+            <div className="mt-0.5 ux-subtitle text-white">For MrBean9 Online Casino Players</div>
           </div>
         </div>
       </div>
@@ -69,11 +69,11 @@ export default function PaymentMethods({ onRegisterClick }: { onRegisterClick: (
           { label: "Avg. Speed", value: "15 mins", icon: "ri-time-line", color: "text-[#60a5fa]" },
         ].map((s, i) => (
           <div key={i} className={`text-center py-3 ${i < 2 ? "border-r border-[#5c4a3d]" : ""}`}>
-            <div className="w-6 h-6 flex items-center justify-center mx-auto mb-1">
+            <div className="w-8 h-8 flex items-center justify-center mx-auto">
               <i className={`${s.icon} ${s.color} text-base`} />
             </div>
-            <div className={`font-black text-sm ${s.color}`}>{s.value}</div>
-            <div className="text-white text-[9px] font-semibold">{s.label}</div>
+            <div className={`font-black text-base sm:text-lg md:text-xl ${s.color}`}>{s.value}</div>
+            <div className="text-white text-xs font-semibold sm:text-sm md:text-base">{s.label}</div>
           </div>
         ))}
       </div>
@@ -86,7 +86,7 @@ export default function PaymentMethods({ onRegisterClick }: { onRegisterClick: (
               <div className={`w-7 h-7 flex items-center justify-center ${cat.bg} rounded-lg`}>
                 <i className={`${cat.icon} ${cat.color} text-sm`} />
               </div>
-              <span className={`font-black text-xs uppercase tracking-wider ${cat.color}`}>{cat.category}</span>
+              <span className={`font-black text-sm uppercase tracking-wider sm:text-base md:text-lg ${cat.color}`}>{cat.category}</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               {cat.methods.map((method) => (
@@ -98,11 +98,11 @@ export default function PaymentMethods({ onRegisterClick }: { onRegisterClick: (
                     <i className={`${method.icon} ${cat.color} text-sm`} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-[10px] font-bold text-white sm:text-xs md:text-sm">{method.name}</div>
-                    <div className="mt-0.5 text-[9px] leading-snug text-white/90 sm:text-[10px] md:text-xs">
+                    <div className="truncate text-xs font-bold text-white sm:text-sm md:text-base">{method.name}</div>
+                    <div className="mt-0.5 text-[10px] leading-snug text-white/90 sm:text-xs md:text-sm">
                       {method.min} – {method.max}
                     </div>
-                    <div className="mt-1 inline-flex rounded-full border border-[#22c55e]/35 bg-[#22c55e]/10 px-1.5 py-0.5 text-[9px] font-black leading-none text-[#22c55e] sm:text-[10px]">
+                    <div className="mt-1 inline-flex rounded-full border border-[#22c55e]/35 bg-[#22c55e]/10 px-1.5 py-0.5 text-[10px] font-black leading-none text-[#22c55e] sm:text-xs md:text-sm">
                       {method.time}
                     </div>
                   </div>
@@ -119,8 +119,8 @@ export default function PaymentMethods({ onRegisterClick }: { onRegisterClick: (
           <i className="ri-lock-2-line text-[#22c55e] text-base" />
         </div>
         <div>
-          <div className="mb-0.5 text-xs font-black text-[#22c55e] sm:text-sm">256-bit SSL Encrypted Transactions</div>
-          <p className="text-[10px] leading-relaxed text-white sm:text-xs md:text-sm md:leading-relaxed">
+          <div className="mb-0.5 text-sm font-black text-[#22c55e] sm:text-base md:text-lg">256-bit SSL Encrypted Transactions</div>
+          <p className="ux-desc text-white">
             All financial transactions at {renderWithMrBean9("MrBean9")} are protected by bank-grade 256-bit SSL encryption.{" "}
             Your funds and personal data are 100% secure at all times.
           </p>

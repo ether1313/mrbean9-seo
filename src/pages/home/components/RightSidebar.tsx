@@ -30,7 +30,7 @@ export default function RightSidebar() {
                 <img src={item.image} alt={item.name} className="h-[40px] max-w-full object-contain" />
               </div>
               <div className="mt-2 text-sm font-black leading-tight text-white xl:text-base">{item.name}</div>
-              <p className="mt-1.5 text-sm leading-relaxed text-white/90 xl:text-base">{item.description}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-white/90 xl:text-md">{item.description}</p>
             </div>
           ))}
         </div>

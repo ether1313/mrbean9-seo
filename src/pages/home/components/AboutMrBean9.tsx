@@ -30,7 +30,7 @@ export default function AboutMrBean9({ onRegisterClick }: { onRegisterClick: () 
         <div className="flex h-8 w-8 items-center justify-center text-white">
           <i className="ri-information-line text-xl text-white" />
         </div>
-        <h2 className="text-sm font-black uppercase tracking-wider text-white md:text-base">
+        <h2 className="ux-title-md uppercase tracking-wider text-white">
           About <span className={mrBean9MarkClassName}>MrBean9</span>
         </h2>
         <span className="ml-auto rounded-full border border-brand/30 bg-brand/20 px-2 py-0.5 text-[10px] font-black text-white sm:px-2.5 sm:text-xs">
@@ -47,16 +47,16 @@ export default function AboutMrBean9({ onRegisterClick }: { onRegisterClick: () 
         />
         <div className="absolute inset-0 flex items-center bg-gradient-to-r from-brand/88 via-brand/40 to-transparent px-4 sm:px-6">
           <div>
-            <MrBean9CapsWord className="text-xl leading-tight drop-shadow-md sm:text-2xl md:text-3xl" />
-            <div className="text-base font-black leading-tight text-white sm:text-lg md:text-xl">Australia&apos;s Most Trusted</div>
-            <div className="text-xs font-semibold text-amber-100 sm:text-sm md:text-base">Online Entertainment Platform</div>
+            <MrBean9CapsWord className="ux-title-xl drop-shadow-md" />
+            <div className="ux-title-lg text-white">Australia&apos;s Most Trusted</div>
+            <div className="ux-subtitle text-amber-100">Online Entertainment Platform</div>
           </div>
         </div>
       </div>
 
       {/* About Text */}
       <div className="px-3 py-3 sm:px-5 sm:py-4">
-        <p className="text-sm leading-relaxed text-white md:text-base md:leading-relaxed">
+        <p className="ux-desc text-base sm:text-base md:text-lg text-white">
           <span className={mrBean9MarkClassName}>MrBean9</span> is Australia&apos;s premier online entertainment destination, 
           offering over <strong className="text-white">1,500+ casino games</strong> including live baccarat, slots, poker, 
           roulette and exclusive jackpot games. Founded in 2020, we have served over <strong className="text-white">250,000 players</strong> 
@@ -86,8 +86,8 @@ export default function AboutMrBean9({ onRegisterClick }: { onRegisterClick: () 
             <div className="text-white w-8 h-8 flex items-center justify-center mx-auto mb-1">
               <i className={`${stat.icon} text-white text-lg`} />
             </div>
-            <div className="text-base font-black leading-tight text-white sm:text-lg">{stat.value}</div>
-            <div className="mt-0.5 text-[10px] font-semibold text-white sm:text-xs">{stat.label}</div>
+            <div className="ux-title-md text-white">{stat.value}</div>
+            <div className="mt-0.5 text-[10px] font-semibold text-white sm:text-xs md:text-sm">{stat.label}</div>
           </div>
         ))}
       </div>

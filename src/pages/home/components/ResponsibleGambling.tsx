@@ -57,26 +57,15 @@ export default function ResponsibleGambling() {
       {/* Banner */}
       <div className="relative">
         <img
-          src="https://readdy.ai/api/search-image?query=cartoon%20mr%20bean%20character%20holding%20shield%20and%20scales%20of%20justice%20casino%20license%20certificate%20award%20secure%20responsible%20gambling%20protection%20safety%20padlock%20checkmark%20certification%20document%20vibrant%20warm%20brown%20gold%20tones%20professional%20wide%20banner%20illustration%20with%20balance%20moderation%20message&width=900&height=160&seq=responsible-gambling-mrbean9&orientation=landscape"
+          src="/images/responsible/responsible-gambling.png"
           alt="Responsible Gambling"
-          className="h-28 w-full object-cover object-top sm:h-32"
+          className="h-36 w-full object-fill object-top sm:h-60"
         />
-        <div className="absolute inset-0 flex items-center bg-gradient-to-r from-brand/88 via-brand/42 to-transparent px-4 sm:px-6">
-          <div>
-            <div className="text-base font-black leading-tight text-white sm:text-lg md:text-xl">Play Responsibly</div>
-            <div className="mt-0.5 text-xs font-bold text-amber-100 sm:text-sm">Licensed · Regulated · Safe · 18+ Only</div>
-          </div>
-        </div>
-        <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3">
-          <span className="inline-flex items-center rounded-full border border-white/80 bg-[#2f241d] px-2.5 py-0.5 text-[10px] font-black leading-none text-white shadow-sm sm:px-3 sm:py-1 sm:text-xs">
-            18+
-          </span>
-        </div>
       </div>
 
       {/* Responsible Gambling Message */}
       <div className="border-b border-[#5c4a3d] px-3 py-3 sm:px-5 sm:py-4">
-        <p className="text-xs leading-relaxed text-white sm:text-sm md:text-base md:leading-relaxed">
+        <p className="text-base leading-relaxed text-white sm:text-base md:text-lg md:leading-relaxed">
           {renderWithMrBean9("MrBean9")} is committed to promoting responsible gambling. We believe gambling should be a fun, 
           entertaining activity — not a way to make money or escape problems. If you feel gambling is 
           negatively affecting your life, please use our responsible gambling tools or seek help.
@@ -92,8 +81,8 @@ export default function ResponsibleGambling() {
               <div className="flex h-14 items-center justify-center overflow-hidden rounded-lg bg-[#2f241d] px-2 sm:h-16">
                 <img src={item.image} alt={item.name} className="h-10 max-w-full object-contain" />
               </div>
-              <div className="mt-2 text-[10px] font-black leading-tight text-white sm:text-xs md:text-sm">{item.name}</div>
-              <p className="mt-1.5 text-[10px] leading-relaxed text-white/90 sm:text-xs md:text-sm">{item.description}</p>
+              <div className="mt-2 text-md font-black leading-tight text-white sm:text-base md:text-base">{item.name}</div>
+              <p className="mt-1.5 text-sm leading-relaxed text-white/90 sm:text-sm md:text-sm">{item.description}</p>
             </div>
           ))}
         </div>
@@ -106,11 +95,11 @@ export default function ResponsibleGambling() {
               key={tool.title}
               className="bg-[#2f241d] border border-[#5c4a3d] rounded-xl p-3 hover:border-[#8b6b58] transition-all"
             >
-              <div className="text-[#F2A530] w-7 h-7 flex items-center justify-center mb-2">
+              <div className="text-[#F2A530] w-8 h-8 flex items-center justify-center mb-2">
                 <i className={`${tool.icon} text-white text-base`} />
               </div>
-              <div className="mb-1 text-[10px] font-black text-white sm:text-xs md:text-sm">{tool.title}</div>
-              <div className="text-[9px] leading-relaxed text-white sm:text-[10px] md:text-xs">{tool.desc}</div>
+              <div className="mb-1 text-md font-black text-white sm:text-md md:text-base">{tool.title}</div>
+              <div className="text-sm leading-relaxed text-white sm:text-sm md:text-sm">{tool.desc}</div>
             </div>
           ))}
         </div>
@@ -128,7 +117,7 @@ export default function ResponsibleGambling() {
               <div className="w-6 h-6 flex items-center justify-center">
                 <i className={`${link.icon} text-[#22c55e] text-sm`} />
               </div>
-              <span className="text-[10px] font-bold leading-tight text-white sm:text-xs md:text-sm">{link.name}</span>
+              <span className="text-[10px] font-bold leading-tight text-white sm:text-sm md:text-sm">{link.name}</span>
             </a>
           ))}
         </div>

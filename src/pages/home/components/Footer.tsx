@@ -6,9 +6,8 @@ interface FooterProps {
 }
 
 const footerLinks = {
-  Games: ["Slot Games", "Live Casino", "Table Games", "Fast Games", "New Games", "Jackpot Games"],
-  Support: ["Help Center", "Payment Methods", "Responsible Gaming", "Terms & Conditions", "Privacy Policy"],
-  Company: ["About", "Affiliates", "VIP Program", "Blog", "Contact Us"],
+  Support: ["Payment Methods", "Responsible Gaming", "Terms & Conditions", "Privacy Policy"],
+  Company: ["About", "VIP Program", "Blog", "Contact Us"],
 };
 
 const paymentIcons = [

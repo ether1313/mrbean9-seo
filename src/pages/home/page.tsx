@@ -75,11 +75,7 @@ export default function HomePage() {
       <SignUpModal isOpen={showModal} onClose={() => setShowModal(false)} />
 
       {/* Bottom Navigation */}
-      <BottomNav
-        onChatClick={() => setShowChat(!showChat)}
-        onBonusClick={() => setShowModal(true)}
-        onHomeClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      />
+      <BottomNav />
 
       {/* Live Chat Window */}
       {showChat && (

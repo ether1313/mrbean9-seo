@@ -53,7 +53,7 @@ function SectionHeader({ icon, title }: { icon: React.ReactNode; title: string }
   return (
     <div className="flex items-center gap-2 border-b border-[#5c4a3d] bg-[#1f1812] px-3 py-2.5 lg:gap-2.5 lg:px-3.5 lg:py-3">
       <span className="text-amber-400 [&_svg]:h-[14px] [&_svg]:w-[14px] xl:[&_svg]:h-4 xl:[&_svg]:w-4">{icon}</span>
-      <h3 className="text-sm font-black uppercase tracking-wider text-white xl:text-base 2xl:text-lg">{title}</h3>
+      <h3 className="text-base font-black uppercase text-white sm:text-base md:text-base">{title}</h3>
     </div>
   );
 }
@@ -66,7 +66,7 @@ export function SlotStrategyCard() {
 
       <div className="space-y-3.5 p-3 lg:p-3.5 lg:space-y-4">
         {/* RTP explanation */}
-        <p className="text-sm leading-relaxed text-white/85 xl:text-base">
+        <p className="ux-desc text-white/85">
           RTP (return to player) is a theoretical long-run average over millions of spins — not a
           session guarantee. Aim for games listing higher RTP where available.
         </p>
@@ -118,7 +118,7 @@ export function SlotStrategyCard() {
                   ))}
                 </div>
                 <p className={`self-center text-xs font-black xl:text-sm ${v.accent}`}>{v.label}</p>
-                <p className="col-start-2 min-w-0 text-xs leading-snug text-white/70 xl:text-sm">{v.desc}</p>
+                <p className="col-start-2 min-w-0 text-[10px] leading-snug text-white/70 sm:text-xs md:text-sm">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export function SlotStrategyCard() {
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-[10px] font-black text-amber-400 xl:h-6 xl:w-6 xl:text-xs">
                   {i + 1}
                 </span>
-                <p className="text-xs leading-relaxed text-white/85 xl:text-sm">{tip}</p>
+                <p className="text-[10px] leading-relaxed text-white/85 sm:text-xs md:text-sm">{tip}</p>
               </li>
             ))}
           </ol>
@@ -160,10 +160,9 @@ export function RngExplainerCard() {
       <div className="space-y-3 p-3 lg:p-3.5 lg:space-y-4">
         {/* Visual callout */}
         <div className="flex items-center gap-3 rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-2.5 lg:px-3.5">
-          <RefreshCw className="h-6 w-6 shrink-0 text-amber-400 opacity-80 xl:h-7 xl:w-7" />
           <div>
-            <p className="text-sm font-black text-amber-300 xl:text-base">Each spin is independent.</p>
-            <p className="text-xs leading-snug text-white/65 xl:text-sm">
+            <p className="text-base font-black text-amber-300 sm:text-lg md:text-lg">Each spin is independent.</p>
+            <p className="text-[10px] leading-snug text-white/65 sm:text-xs md:text-sm">
               Past results have zero effect on the next outcome.
             </p>
           </div>
@@ -184,7 +183,7 @@ export function RngExplainerCard() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs leading-snug text-white/50 xl:text-sm">
+        <p className="text-center text-[10px] leading-snug text-white/50 sm:text-xs md:text-sm">
           Each spin draws a fresh random result — no connection between rounds.
         </p>
 
@@ -195,7 +194,7 @@ export function RngExplainerCard() {
           {rngFacts.map((fact, i) => (
             <li key={i} className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-400 xl:h-4 xl:w-4" />
-              <p className="text-xs leading-relaxed text-white/85 xl:text-sm">{fact}</p>
+              <p className="text-[10px] leading-relaxed text-white/85 sm:text-xs md:text-sm">{fact}</p>
             </li>
           ))}
         </ul>

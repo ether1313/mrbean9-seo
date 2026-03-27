@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TopBar from "../home/components/TopBar";
 import Footer from "../home/components/Footer";
 import SignUpModal from "../home/components/SignUpModal";
@@ -10,7 +10,6 @@ import { vipPageMeta, vipSections } from "@/mocks/vipBlogContent";
 export default function VipPage() {
   const [showModal, setShowModal] = useState(false);
   const [showChat, setShowChat] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const prev = document.title;
@@ -66,10 +65,10 @@ export default function VipPage() {
               <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-300/90 md:text-sm">
                 {vipPageMeta.kicker}
               </p>
-              <h1 className="mt-2 text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl">
+              <h1 className="mt-2 ux-title-xl text-white md:text-5xl">
                 {vipPageMeta.title}
               </h1>
-              <p className="mt-4 text-base leading-relaxed text-white/85 md:text-lg lg:text-xl">
+              <p className="mt-4 ux-subtitle text-white/85 lg:text-xl">
                 {vipPageMeta.subtitle}
               </p>
               <p className="mt-3 text-xs text-white/50 md:text-sm">
@@ -84,16 +83,16 @@ export default function VipPage() {
                   id={section.id}
                   className="scroll-mt-24 border-b border-[#5c4a3d]/80 pb-10 last:border-b-0 last:pb-0"
                 >
-                  <h2 className="text-xl font-black text-white sm:text-2xl md:text-3xl">
+                  <h2 className="ux-title-lg text-white">
                     {section.title}
                   </h2>
-                  <div className="mt-4 space-y-4 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg">
+                  <div className="mt-4 space-y-4 text-md leading-relaxed text-white/90 sm:text-base md:text-base lg:text-lg">
                     {section.paragraphs.map((p, idx) => (
                       <p key={idx}>{renderWithMrBean9(p)}</p>
                     ))}
                   </div>
                   {section.bullets && section.bullets.length > 0 && (
-                    <ul className="mt-4 list-inside list-disc space-y-2.5 text-sm text-white/85 md:text-base lg:text-lg">
+                    <ul className="mt-4 list-inside list-disc space-y-2.5 text-md text-white/85 md:text-base lg:text-lg">
                       {section.bullets.map((b, idx) => (
                         <li key={idx} className="leading-relaxed">
                           {renderWithMrBean9(b)}
@@ -131,11 +130,7 @@ export default function VipPage() {
       <Footer onSignUpClick={() => setShowModal(true)} />
       <SignUpModal isOpen={showModal} onClose={() => setShowModal(false)} />
 
-      <BottomNav
-        onChatClick={() => setShowChat(!showChat)}
-        onBonusClick={() => setShowModal(true)}
-        onHomeClick={() => navigate("/")}
-      />
+      <BottomNav />
 
       {showChat && (
         <div className="fixed bottom-20 right-3 z-50 w-[min(100vw-1.5rem,20rem)] rounded-2xl border border-[#5c4a3d] bg-[#3a2d24] sm:right-4 sm:w-80">

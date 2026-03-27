@@ -87,7 +87,7 @@ export default function WhyChooseSection({ onRegisterClick }: { onRegisterClick:
         <div className="flex h-8 w-8 items-center justify-center text-white">
           <i className="ri-star-smile-line text-xl text-white" />
         </div>
-        <h2 className="min-w-0 flex-1 text-sm font-black uppercase tracking-wider text-white md:text-base">
+        <h2 className="min-w-0 flex-1 ux-title-md uppercase tracking-wider text-white">
           Why Choose <span className={mrBean9MarkClassName}>MrBean9</span>
         </h2>
         <span className="ml-auto inline-flex shrink-0 items-center gap-1 rounded-full border border-[#22c55e]/35 bg-[#22c55e]/20 px-2 py-1 text-[9px] font-black leading-none text-[#22c55e] sm:px-2.5 sm:py-0.5 sm:text-xs">
@@ -106,11 +106,11 @@ export default function WhyChooseSection({ onRegisterClick }: { onRegisterClick:
         />
         <div className="absolute inset-0 flex items-center bg-gradient-to-r from-brand-dark/92 via-brand-dark/55 to-transparent px-4 sm:px-6">
           <div>
-            <div className="text-lg font-black text-amber-100 sm:text-xl md:text-2xl">Australia&apos;s Best</div>
-            <div className="text-base font-black text-white sm:text-lg md:text-xl">
+            <div className="ux-title-lg text-amber-100">Australia&apos;s Best</div>
+            <div className="ux-title-md text-white">
               8 Reasons to Pick <MrBean9Word />
             </div>
-            <div className="text-xs text-white/75 sm:text-sm">Join 250,000+ happy members today</div>
+            <div className="ux-desc text-white/75">Join 250,000+ happy members today</div>
           </div>
         </div>
       </div>
@@ -128,9 +128,9 @@ export default function WhyChooseSection({ onRegisterClick }: { onRegisterClick:
             <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#2f241d] border border-[#5c4a3d] mb-2 shadow-sm">
               <i className={`${feat.icon} ${feat.color} text-lg`} />
             </div>
-            <div className={`mb-1 text-xs font-black leading-tight sm:text-sm ${feat.color}`}>{feat.title}</div>
+            <div className={`mb-1 text-sm font-black leading-tight md:text-base ${feat.color}`}>{feat.title}</div>
             <p
-              className="text-[10px] leading-relaxed text-white sm:text-xs md:text-sm md:leading-relaxed"
+              className="ux-desc text-white"
               dangerouslySetInnerHTML={{ __html: feat.desc }}
             />
           </div>
@@ -141,8 +141,8 @@ export default function WhyChooseSection({ onRegisterClick }: { onRegisterClick:
       <div className="px-3 pb-4 sm:px-4">
         <div className="flex items-center justify-between gap-3 rounded-xl border border-brand/25 bg-[#2f241d] hover:bg-[#423227] p-3 sm:p-4">
           <div className="min-w-0">
-            <div className="text-sm font-black text-[#fdf5e6f2] md:text-base">Ready to Experience It Yourself?</div>
-            <div className="mt-0.5 text-xs text-white sm:text-sm">No fees. No downloads. Just pure casino fun.</div>
+            <div className="ux-title-md text-[#fdf5e6f2]">Ready to Experience It Yourself?</div>
+            <div className="mt-0.5 ux-desc text-white">No fees. No downloads. Just pure casino fun.</div>
           </div>
           <button
             onClick={onRegisterClick}

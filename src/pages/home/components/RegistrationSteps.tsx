@@ -65,27 +65,21 @@ export default function RegistrationSteps({ onRegisterClick }: { onRegisterClick
         <div className="flex h-8 w-8 items-center justify-center text-white">
           <i className="ri-account-circle-line text-xl text-white" />
         </div>
-        <h2 className="text-sm font-black uppercase tracking-wider text-white md:text-base">Registration &amp; Account Verification</h2>
+        <h2 className="ux-title-md uppercase tracking-wider text-white">Registration &amp; Account Verification</h2>
       </div>
 
       {/* Registration Banner */}
       <div className="relative">
         <img
-          src="https://readdy.ai/api/search-image?query=cartoon%20mr%20bean%20character%20sitting%20at%20computer%20registering%20for%20casino%20account%20excited%20happy%20typing%20keyboard%20coins%20and%20bonus%20pop%20up%20on%20screen%20vibrant%20warm%20brown%20gold%20tones%20cheerful%20festive%20casino%20registration%20illustration%20wide%20banner%20format&width=900&height=180&seq=register-banner-bean9&orientation=landscape"
+          src="/images/registration/register-banner.jpg"
           alt="Register at MrBean9"
-          className="h-32 w-full object-cover object-top sm:h-36"
+          className="h-32 w-full object-fill object-top sm:h-60"
         />
-        <div className="absolute inset-0 flex items-center bg-gradient-to-r from-brand/85 via-brand/40 to-transparent px-4 sm:px-6">
-          <div>
-            <div className="text-lg font-black leading-tight text-white sm:text-xl md:text-2xl">Create Your Account</div>
-            <div className="text-xs font-bold text-amber-100 sm:text-sm md:text-base">in less than 2 minutes!</div>
-          </div>
-        </div>
       </div>
 
       {/* Steps */}
       <div className="px-3 py-3 sm:px-4 sm:py-4">
-        <h3 className="mb-3 text-xs font-black uppercase tracking-widest text-white sm:text-sm md:text-base">How to Register — 6 Easy Steps</h3>
+        <h3 className="mb-3 text-sm font-black uppercase tracking-widest text-white sm:text-base md:text-lg">How to Register — 6 Easy Steps</h3>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
           {steps.map((s) => (
             <div
@@ -94,12 +88,12 @@ export default function RegistrationSteps({ onRegisterClick }: { onRegisterClick
             >
               <div className="flex items-start gap-2 mb-2">
                 <span className={`text-[10px] font-black ${s.color} bg-[#2f241d] border ${s.border} rounded-full px-1.5 py-0.5`}>{s.step}</span>
-                <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
                   <i className={`${s.icon} ${s.color} text-base`} />
                 </div>
               </div>
-              <div className={`mb-1 text-xs font-black sm:text-sm ${s.color}`}>{s.title}</div>
-              <div className="text-[10px] leading-relaxed text-white sm:text-xs md:text-sm">{s.desc}</div>
+              <div className={`mb-1 text-sm font-black sm:text-base md:text-lg ${s.color}`}>{s.title}</div>
+              <div className="ux-desc text-white">{s.desc}</div>
             </div>
           ))}
         </div>
@@ -107,25 +101,25 @@ export default function RegistrationSteps({ onRegisterClick }: { onRegisterClick
 
       {/* Verification Section */}
       <div className="px-3 pb-4 sm:px-4">
-        <h3 className="mb-3 text-xs font-black uppercase tracking-widest text-white sm:text-sm md:text-base">Account Verification Methods</h3>
+        <h3 className="mb-3 text-sm font-black uppercase tracking-widest text-white sm:text-base md:text-lg">Account Verification Methods</h3>
         <div className="grid grid-cols-2 gap-2">
           {verifyItems.map((item, i) => (
             <button
               key={i}
               onClick={() => setActiveVerify(activeVerify === i ? null : i)}
-              className={`cursor-pointer rounded-xl border bg-[#2f241d] p-3 text-left transition-all ${
+              className={`cursor-pointer rounded-xl border bg-[#2f241d] px-2.5 py-2 text-left transition-all sm:px-3 sm:py-2.5 ${
                 activeVerify === i ? "border-brand bg-[#3a2d24] ring-1 ring-brand/35" : "border-[#5c4a3d] hover:border-[#8b6b58]"
               }`}
             >
-              <div className="flex items-center gap-2 mb-1">
-                <div className="text-white w-7 h-7 flex items-center justify-center">
-                  <i className={`${item.icon} text-white text-base`} />
+              <div className="mb-0.5 flex items-center gap-1.5 sm:gap-2">
+                <div className="flex h-6 w-6 items-center justify-center text-white sm:h-6.5 sm:w-6.5">
+                  <i className={`${item.icon} text-white text-sm sm:text-base`} />
                 </div>
-                <span className="text-[11px] font-black text-white sm:text-xs md:text-sm">{item.title}</span>
+                <span className="text-xs font-black text-white sm:text-sm md:text-base">{item.title}</span>
                 <i className={`ri-arrow-down-s-line ml-auto text-white/55 transition-transform ${activeVerify === i ? "rotate-180" : ""}`} />
               </div>
               {activeVerify === i && (
-                <p className="modal-enter mt-1 text-[10px] leading-relaxed text-white sm:text-xs md:text-sm">{item.desc}</p>
+                <p className="modal-enter mt-0.5 ux-desc text-white">{item.desc}</p>
               )}
             </button>
           ))}

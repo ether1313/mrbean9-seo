@@ -92,7 +92,7 @@ export default function FAQSection({ onRegisterClick }: { onRegisterClick: () =>
         <div className="flex h-8 w-8 items-center justify-center">
           <i className="ri-question-answer-line text-xl text-white" />
         </div>
-        <h2 className="text-sm font-black uppercase tracking-wider text-white md:text-base">FAQ</h2>
+        <h2 className="ux-title-md uppercase tracking-wider text-white">FAQ</h2>
       </div>
 
       {/* Category Tabs */}
@@ -101,14 +101,14 @@ export default function FAQSection({ onRegisterClick }: { onRegisterClick: () =>
           <button
             key={i}
             onClick={() => { setActiveCategory(i); setOpenQuestion(null); }}
-            className={`flex flex-shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-2.5 text-[10px] font-black transition-all sm:px-4 sm:py-3 sm:text-xs md:text-sm ${
+            className={`flex flex-shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-2.5 text-xs font-black transition-all sm:px-4 sm:py-3 sm:text-sm md:text-sm ${
               activeCategory === i
                 ? `${cat.color} border-current bg-[#2f241d]`
                 : "text-white/50 border-transparent hover:text-white"
             }`}
           >
-            <div className="w-4 h-4 flex items-center justify-center">
-              <i className={`${cat.icon} text-sm`} />
+            <div className="w-6 h-6 flex items-center justify-center">
+              <i className={`${cat.icon} text-sm sm:text-base`} />
             </div>
             {cat.category}
           </button>
@@ -129,17 +129,17 @@ export default function FAQSection({ onRegisterClick }: { onRegisterClick: () =>
               className="w-full text-left px-4 py-3 flex items-start gap-3 cursor-pointer hover:bg-[#2f241d]/80 transition-all"
             >
               <span className={`mt-0.5 flex-shrink-0 text-xs font-black sm:text-sm ${currentFaq.color}`}>Q{i + 1}</span>
-              <span className="flex-1 text-xs font-bold leading-relaxed text-white sm:text-sm md:text-base">
+              <span className="flex-1 text-sm font-bold leading-relaxed text-white sm:text-base md:text-base">
                 {renderWithMrBean9(item.q)}
               </span>
-              <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+              <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
                 <i className={`ri-arrow-down-s-line text-white/45 transition-transform ${openQuestion === i ? "rotate-180" : ""}`} />
               </div>
             </button>
             {openQuestion === i && (
               <div className="px-4 pb-3 modal-enter">
                 <div className="pl-7 border-l-2 border-brand/25">
-                  <p className="text-xs leading-relaxed text-white sm:text-sm md:text-base md:leading-relaxed">
+                  <p className="ux-desc text-white">
                     {renderWithMrBean9(item.a)}
                   </p>
                 </div>
@@ -152,8 +152,8 @@ export default function FAQSection({ onRegisterClick }: { onRegisterClick: () =>
       {/* Contact Support */}
       <div className="mx-3 mb-4 rounded-xl border border-[#5c4a3d] bg-[#2f241d] p-3 sm:mx-4 sm:p-4">
         <div className="mb-3 text-center">
-          <div className="text-sm font-black text-white md:text-base">Still have questions?</div>
-          <div className="mt-0.5 text-xs text-white sm:text-sm">Our 24/7 support team is ready to help you</div>
+          <div className="ux-title-md text-white">Still have questions?</div>
+          <div className="mt-0.5 ux-desc text-white">Our 24/7 support team is ready to help you</div>
         </div>
         <div className="grid grid-cols-3 gap-2">
           {[

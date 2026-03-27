@@ -33,7 +33,7 @@ export default function LeftSidebar({ onRegisterClick }: LeftSidebarProps) {
             <header className="border-b border-[#5c4a3d] bg-[#1f1812] px-3 py-2.5 lg:px-3.5 lg:py-3">
               <h3
                 id={`left-seo-${article.id}`}
-                className="text-sm font-black uppercase tracking-wider text-white xl:text-base 2xl:text-lg"
+                className="text-sm font-black uppercase tracking-wider text-white md:text-base"
               >
                 {article.heading}
               </h3>
@@ -42,7 +42,7 @@ export default function LeftSidebar({ onRegisterClick }: LeftSidebarProps) {
               {article.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="text-sm leading-relaxed text-white/90 xl:text-base"
+                  className="text-sm leading-relaxed text-white/90 md:text-base"
                 >
                   {renderWithMrBean9(paragraph)}
                 </p>
