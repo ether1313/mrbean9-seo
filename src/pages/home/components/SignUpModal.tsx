@@ -6,11 +6,13 @@ interface SignUpModalProps {
   onClose: () => void;
 }
 
+const MRBEAN9_CTA_URL = "https://mrbean9.com/RFMRBEAN9SEO";
+
 const stats = [
   { value: "250K+", label: "Players" },
-  { value: "1,500+", label: "Games" },
+  { value: "4,500+", label: "Games" },
   { value: "AUD 5", label: "Min Deposit" },
-  { value: "AUD 25", label: "Min Withdraw" },
+  { value: "AUD 28", label: "Min Withdraw" },
 ];
 
 export default function SignUpModal({ isOpen, onClose }: SignUpModalProps) {
@@ -114,17 +116,24 @@ export default function SignUpModal({ isOpen, onClose }: SignUpModalProps) {
 
           {/* CTA Buttons */}
           <div className="pt-4 grid grid-cols-2 gap-3">
-            <button
-              onClick={onClose}
+            <a
+              href={MRBEAN9_CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => onClose()}
               className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#2f241d] border-2 border-brand text-white font-black py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm hover:bg-brand hover:text-white transition-all duration-200 cursor-pointer whitespace-nowrap"
             >
               <i className="ri-login-box-line" /> LOGIN
-            </button>
-            <button
+            </a>
+            <a
+              href={MRBEAN9_CTA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => onClose()}
               className="flex items-center justify-center gap-1.5 sm:gap-2 bg-brand text-white font-black py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm hover:bg-[#2f241d] transition-all duration-200 cursor-pointer whitespace-nowrap shadow-md shadow-brand/20"
             >
               <i className="ri-user-add-line" /> REGISTER NOW
-            </button>
+            </a>
           </div>
 
           {/* 18+ Disclaimer */}

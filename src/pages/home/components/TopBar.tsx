@@ -67,6 +67,7 @@ export default function TopBar({ onLoginClick, onRegisterClick }: TopBarProps) {
     { icon: "ri-gift-line", label: "PROMOTIONS", to: "/#promotions" },
     { icon: "ri-lightbulb-line", label: "STRATEGY", to: "/guides/strategy" },
     { icon: "ri-vip-crown-line", label: "VIP", to: "/vip" },
+    { icon: "ri-article-line", label: "BLOG", to: "/blog" },
   ] as const;
 
   return (
@@ -108,7 +109,8 @@ export default function TopBar({ onLoginClick, onRegisterClick }: TopBarProps) {
             onClick={(e) => handleNavClick(e, to)}
             className={`flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-bold text-black hover:bg-[#f2f2f2] xl:text-sm ${
               (label === "STRATEGY" && location.pathname === "/guides/strategy") ||
-              (label === "VIP" && location.pathname === "/vip")
+              (label === "VIP" && location.pathname === "/vip") ||
+              (label === "BLOG" && location.pathname === "/blog")
                 ? "bg-[#ececec]"
                 : ""
             }`}

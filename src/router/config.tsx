@@ -4,6 +4,7 @@ import NotFound from "../pages/NotFound";
 import Home from "../pages/home/page";
 import StrategyPage from "../pages/strategy/page";
 import VipPage from "../pages/vip/page";
+import BlogPage from "../pages/blog";
 
 const routes: RouteObject[] = [
   {
@@ -21,6 +22,10 @@ const routes: RouteObject[] = [
   {
     path: "/vip",
     element: <VipPage />,
+  },
+  {
+    path: "/blog",
+    element: <BlogPage />,
   },
   {
     path: "/members/vip",

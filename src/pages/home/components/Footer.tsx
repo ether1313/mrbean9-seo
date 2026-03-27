@@ -1,14 +1,42 @@
+import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { liveTransactions } from "../../../mocks/casinoData";
-import { MrBean9Word, renderWithMrBean9 } from "@/utils/renderMrBean9";
+import { MrBean9Word } from "@/utils/renderMrBean9";
 
 interface FooterProps {
   onSignUpClick: () => void;
 }
 
-const footerLinks = {
-  Support: ["Payment Methods", "Responsible Gaming", "Terms & Conditions", "Privacy Policy"],
-  Company: ["About", "VIP Program", "Blog", "Contact Us"],
-};
+/** Only routes / home sections that exist in this app */
+const footerColumns: {
+  title: string;
+  links: { label: ReactNode; to: string }[];
+}[] = [
+  {
+    title: "Support",
+    links: [
+      { label: "Payment Methods", to: "/#payments" },
+      { label: "Responsible Gaming", to: "/#responsible" },
+      { label: "FAQ", to: "/#faq" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      {
+        label: (
+          <>
+            About MrBean9
+          </>
+        ),
+        to: "/#about",
+      },
+      { label: "Strategy", to: "/guides/strategy" },
+      { label: "VIP Program", to: "/vip" },
+      { label: "Blog", to: "/blog" },
+    ],
+  },
+];
 
 const paymentIcons = [
   { icon: "ri-visa-line", label: "Visa" },
@@ -19,7 +47,7 @@ const paymentIcons = [
 
 export default function Footer({ onSignUpClick }: FooterProps) {
   return (
-    <footer className="border-t border-brand/15 bg-white pb-[4.5rem] text-black lg:pb-0">
+    <footer className="border-t border-brand/15 bg-white pb-16 text-black lg:pb-0">
       {/* Live Transactions Ticker */}
       <div className="border-y border-[#e5e5e5] bg-white px-4 py-2.5 sm:px-6 sm:py-3">
         <div className="mx-auto flex max-w-6xl items-center gap-3 sm:gap-4">
@@ -59,11 +87,11 @@ export default function Footer({ onSignUpClick }: FooterProps) {
               {/* Social Icons */}
               <div className="flex gap-3 mb-6">
                 {[
-                  { icon: "ri-facebook-fill", href: "#" },
-                  { icon: "ri-twitter-x-fill", href: "#" },
-                  { icon: "ri-instagram-line", href: "#" },
-                  { icon: "ri-youtube-fill", href: "#" },
-                  { icon: "ri-telegram-fill", href: "#" },
+                  { icon: "ri-facebook-fill", href: "https://mrbean9.com/RFMRBEAN9SEO" },
+                  { icon: "ri-twitter-x-fill", href: "https://mrbean9.com/RFMRBEAN9SEO" },
+                  { icon: "ri-instagram-line", href: "https://mrbean9.com/RFMRBEAN9SEO" },
+                  { icon: "ri-youtube-fill", href: "https://mrbean9.com/RFMRBEAN9SEO" },
+                  { icon: "ri-telegram-fill", href: "https://mrbean9.com/RFMRBEAN9SEO" },
                 ].map(({ icon, href }) => (
                   <a
                     key={icon}
@@ -84,31 +112,25 @@ export default function Footer({ onSignUpClick }: FooterProps) {
               </div>
             </div>
 
-            {/* Link Columns */}
-            {Object.entries(footerLinks).map(([title, links]) => (
+            {/* Link columns — only real pages / home sections */}
+            {footerColumns.map(({ title, links }) => (
               <div key={title}>
-                <h4 id={title.toLowerCase()}>
-                  <a href={`#${title.toLowerCase()}`} className="mb-4 block text-sm font-black uppercase tracking-widest text-black md:mb-5 md:text-base">
-                    {title}
-                  </a>
+                <h4
+                  id={title.toLowerCase()}
+                  className="mb-4 block text-sm font-black uppercase tracking-widest text-black md:mb-5 md:text-base"
+                >
+                  {title}
                 </h4>
                 <ul className="space-y-3">
-                  {links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        rel="nofollow"
-                        className="group flex cursor-pointer items-center gap-2 text-sm text-black transition-colors duration-200 hover:text-black md:text-base"
+                  {links.map((item) => (
+                    <li key={item.to}>
+                      <Link
+                        to={item.to}
+                        className="group flex cursor-pointer items-center gap-2 text-sm text-black transition-colors duration-200 hover:text-stone-700 md:text-base"
                       >
-                        <i className="ri-arrow-right-s-line text-black group-hover:text-black transition-colors" />
-                        {link === "About MrBean9" ? (
-                          <>
-                            About <MrBean9Word />
-                          </>
-                        ) : (
-                          link
-                        )}
-                      </a>
+                        <i className="ri-arrow-right-s-line text-black transition-colors group-hover:text-black" />
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>

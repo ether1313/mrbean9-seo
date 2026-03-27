@@ -34,7 +34,7 @@ export default function AboutMrBean9({ onRegisterClick }: { onRegisterClick: () 
           About <span className={mrBean9MarkClassName}>MrBean9</span>
         </h2>
         <span className="ml-auto rounded-full border border-brand/30 bg-brand/20 px-2 py-0.5 text-[10px] font-black text-white sm:px-2.5 sm:text-xs">
-          AUSTRALIA #1 CASINO
+          AUS CASINO
         </span>
       </div>
 

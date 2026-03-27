@@ -28,6 +28,7 @@ const ROUTES = [
   { path: "/",               changefreq: "weekly",  priority: "1.0" },
   { path: "/guides/strategy", changefreq: "monthly", priority: "0.8" },
   { path: "/vip",            changefreq: "monthly", priority: "0.8" },
+  { path: "/blog",           changefreq: "weekly",  priority: "0.75" },
 ];
 
 // ─── sitemap.xml ─────────────────────────────────────────────────────────────
