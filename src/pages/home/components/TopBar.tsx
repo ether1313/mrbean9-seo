@@ -9,6 +9,9 @@ interface TopBarProps {
 const SECTION_FLASH_CLASS = "section-nav-flash";
 const SECTION_FLASH_MS = 1400;
 
+/** Full page load to SPA root (respects Vite `base` / subpath deploy). */
+const APP_ROOT = import.meta.env.BASE_URL;
+
 function clearAllSectionFlashes() {
   document.querySelectorAll(`.${SECTION_FLASH_CLASS}`).forEach((node) => {
     node.classList.remove(SECTION_FLASH_CLASS);
@@ -73,15 +76,13 @@ export default function TopBar({ onLoginClick, onRegisterClick }: TopBarProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d7d7d7] bg-white text-black shadow-sm">
       <div className="mx-auto flex max-w-[1600px] items-center justify-center px-3 py-2 md:px-4 md:py-2.5">
-        <Link
-          to="/"
+        <a
+          href={APP_ROOT}
           aria-label="MrBean9 — Home"
           title="Home"
           onClick={(e) => {
-            if (location.pathname === "/") {
-              e.preventDefault();
-              scrollToSectionWithFlash("#home");
-            }
+            e.preventDefault();
+            window.location.assign(APP_ROOT);
           }}
           className="flex min-w-0 cursor-pointer justify-center rounded-md outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-black/25"
         >
@@ -92,7 +93,7 @@ export default function TopBar({ onLoginClick, onRegisterClick }: TopBarProps) {
               className="max-h-full w-full object-contain object-center pointer-events-none"
             />
           </div>
-        </Link>
+        </a>
       </div>
 
       <div className="flex gap-2 border-t border-[#e5e5e5] bg-white px-3 py-2 md:px-4 xl:hidden">
