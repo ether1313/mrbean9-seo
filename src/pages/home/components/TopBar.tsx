@@ -73,12 +73,23 @@ export default function TopBar({ onLoginClick, onRegisterClick }: TopBarProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-[#d7d7d7] bg-white text-black shadow-sm">
       <div className="mx-auto flex max-w-[1600px] items-center justify-center px-3 py-2 md:px-4 md:py-2.5">
-        <Link to="/" className="flex min-w-0 cursor-pointer justify-center">
+        <Link
+          to="/"
+          aria-label="MrBean9 — Home"
+          title="Home"
+          onClick={(e) => {
+            if (location.pathname === "/") {
+              e.preventDefault();
+              scrollToSectionWithFlash("#home");
+            }
+          }}
+          className="flex min-w-0 cursor-pointer justify-center rounded-md outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-black/25"
+        >
           <div className="flex h-9 max-w-[min(200px,52vw)] items-center justify-center sm:h-10 md:h-11">
             <img
               src="/mrbean9.png"
               alt="MrBean9"
-              className="max-h-full w-full object-contain object-center"
+              className="max-h-full w-full object-contain object-center pointer-events-none"
             />
           </div>
         </Link>
